@@ -15,12 +15,17 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\xmega.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\sleep.h \
  .././Drivers/IO/io_driver.h .././Drivers/USART/usart.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\string.h \
  c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  .././Drivers/Analog_Comparator/ac_driver.h .././Drivers/LED/led_driver.h \
- .././Drivers/RTC/rtc.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h
+ .././Drivers/Core/core.h .././Drivers/Core/../IO/io_driver.h \
+ .././Drivers/Core/../Analog_Comparator/ac_driver.h \
+ .././Drivers/Core/../LED/led_driver.h
 
 c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -54,6 +59,14 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h:
 
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\math.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\sleep.h:
+
 .././Drivers/IO/io_driver.h:
 
 .././Drivers/USART/usart.h:
@@ -66,6 +79,10 @@ c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 .././Drivers/LED/led_driver.h:
 
-.././Drivers/RTC/rtc.h:
+.././Drivers/Core/core.h:
 
-c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h:
+.././Drivers/Core/../IO/io_driver.h:
+
+.././Drivers/Core/../Analog_Comparator/ac_driver.h:
+
+.././Drivers/Core/../LED/led_driver.h:

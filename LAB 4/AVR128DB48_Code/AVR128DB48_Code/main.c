@@ -14,8 +14,8 @@
 
 // AVR Libraries
 #include <xc.h>
-//#include <util/delay.h>
-//#include <avr/sleep.h>
+#include <util/delay.h>
+#include <avr/sleep.h>
 
 
 
@@ -26,20 +26,35 @@
 #include "Drivers/LED/led_driver.h"
 //#include "Drivers/Polling/polling.h"
 //#include "Drivers/Interrupt/interrupt.h"
-//#include "Drivers/Core/core.h"
-#include "Drivers/RTC/rtc.h"
+#include "Drivers/Core/core.h"
+//#include "Drivers/RTC/rtc.h"
+
+
+
+
+
+
 
 
 
 // Callback function to handle LED toggle based on AC status
 void rtc_overflow_callback(void) {
+	USART3_Init(); // Debugging
+	USART3_SendString("HELOOO!");
+	
+	io_driver_disable();        // Disable unnecessary I/O for low power
+	ac_driver_init();           // Initialize the Analog Comparator (AC)
+	led_driver_init();          // Initialize LED
+	
+	
 	// Get light level status from AC
 	uint8_t light_status = ac_driver_get_status();
 
 	// Control LED based on AC status
 	if (light_status == 0) {
 		led_driver_set_led_on();
-		} else {
+	} 
+	else {
 		led_driver_set_led_off();
 	}
 }
@@ -65,22 +80,23 @@ int main(void)
 	//set_sleep_mode(SLEEP_MODE_STANDBY); // Initialize standby sleep mode
 	
 	// Task 5: Core Independent Operations Initialization
-	//core_init();
+	core_init();
 	
 	// Task 6: Low Power
 	// Set up peripherals
-	io_driver_disable();        // Disable unnecessary I/O for low power
-	ac_driver_init();           // Initialize the Analog Comparator (AC)
-	led_driver_init();          // Initialize LED 
+	//io_driver_disable();        // Disable unnecessary I/O for low power
+	//USART3_Init(); // Debugging
+	//ac_driver_init();           // Initialize the Analog Comparator (AC)
+	//led_driver_init();          // Initialize LED 
 	// Initialize and start RTC with overflow callback
-	RTC_Initialize();
-	RTC_SetOVFIsrCallback(rtc_overflow_callback);
-	RTC_EnableOVFInterrupt();
-	RTC_Start();
+	//RTC_Initialize();
+	//RTC_SetOVFIsrCallback(rtc_overflow_callback);
+	//RTC_EnableOVFInterrupt();
+	//RTC_Start();
 	// Enable global interrupts
-	sei();
+	//sei();
 	// Enter power-down sleep mode
-	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+	//set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	
 	
 	
@@ -169,16 +185,21 @@ int main(void)
 		
 		
 		// Task 6 Low Power (START) --------------------------------------------------
+		/*
 		// GOAL   < AS SALL AS POSSIBLE!!!
 		// RESULT = 162.7 uA
 		// Everything is ran in Core Code
 		// CPU is off
 		// The Events are happening outside CPU
-		
-		// Go to sleep and wait for RTC overflow to wake up
-		sleep_enable();
-		sleep_cpu();  // CPU will sleep until woken by RTC interrupt
-		sleep_disable();  // Disable sleep after waking up
+		// Enable RTC peripheral
+		RTC_Start();
+
+		// Enter sleep mode
+		sleep_cpu();
+
+		// Disable RTC peripheral
+		RTC_Stop();
+		*/
 		// Task 6 Low Power (STOP) --------------------------------------------------
     }
 }

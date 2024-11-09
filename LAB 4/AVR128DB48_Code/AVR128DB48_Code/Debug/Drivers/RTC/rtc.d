@@ -1,7 +1,5 @@
-Drivers/ADC/adc_driver.d Drivers/ADC/adc_driver.o: \
- ../Drivers/ADC/adc_driver.c ../Drivers/ADC/adc_driver.h \
- c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\xc.h \
- c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\cci.h \
+Drivers/RTC/rtc.d Drivers/RTC/rtc.o: ../Drivers/RTC/rtc.c \
+ ../Drivers/RTC/rtc.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\inttypes.h \
@@ -15,13 +13,12 @@ Drivers/ADC/adc_driver.d Drivers/ADC/adc_driver.o: \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\xmega.h \
  c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
-../Drivers/ADC/adc_driver.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\xc.h:
-
-c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\cci.h:
+../Drivers/RTC/rtc.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\io.h:
 
@@ -50,3 +47,9 @@ c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\xmega.h:
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\lock.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\avr\include\avr\interrupt.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+c:\program\ files\microchip\xc8\v2.36\avr\lib\gcc\avr\5.4.0\include\stddef.h:
