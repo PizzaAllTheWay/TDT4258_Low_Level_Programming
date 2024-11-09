@@ -19,7 +19,7 @@
 
 
 
-// Global Variables
+// Global Variables  
 #define FRAMEBUFFER_PATH "/dev/fb0"
 #define MATRIX_SIZE 8
 #define JOYSTICK_DEV_PATH "/dev/input/event0"
@@ -35,6 +35,8 @@
     (((r & 0x1F) << 11) |  /* Red:   Keep only the lowest 5 bits and shift to the leftmost 5 bits of RGB565 */ \
      ((g & 0x3F) << 5)  |  /* Green: Keep the lowest 6 bits and shift to the middle 6 bits of RGB565 */ \
      (b & 0x1F))            /* Blue:  Keep only the lowest 5 bits, positioned in the rightmost 5 bits */
+
+
 
 // Define a larger, varied color palette for Tetris tiles
 static const uint16_t colors[] = {

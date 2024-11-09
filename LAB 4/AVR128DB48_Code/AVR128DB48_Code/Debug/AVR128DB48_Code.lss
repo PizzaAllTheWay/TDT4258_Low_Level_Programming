@@ -1,0 +1,680 @@
+
+AVR128DB48_Code.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00804000  00804000  00000410  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         0000011a  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  00000410  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  0000043f  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000140  00000000  00000000  0000044d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00006498  00000000  00000000  0000058d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000033dd  00000000  00000000  00006a25  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000dab  00000000  00000000  00009e02  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000270  00000000  00000000  0000abb0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000016b7  00000000  00000000  0000ae20  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000002b1  00000000  00000000  0000c4d7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000d0  00000000  00000000  0000c788  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  0000034e  0000034e  00000402  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000c858  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.ac_driver_init 00000020  00000294  00000294  00000348  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.ac_driver_get_status 0000000a  0000032c  0000032c  000003e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.__vector_25 00000064  00000188  00000188  0000023c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.io_driver_disable 0000001e  000002b4  000002b4  00000368  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.led_driver_init 00000008  00000336  00000336  000003ea  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.led_driver_set_led_on 00000008  0000033e  0000033e  000003f2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.led_driver_set_led_off 00000008  00000346  00000346  000003fa  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.__vector_9 00000068  00000120  00000120  000001d4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.USART3_Init 00000024  00000270  00000270  00000324  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.USART3_SendChar 0000000e  0000031e  0000031e  000003d2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.USART3_SendString 0000003c  00000234  00000234  000002e8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.setup_rtc_wakeup 00000018  000002f0  000002f0  000003a4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text.__vector_5 0000001e  000002d2  000002d2  00000386  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 27 .rodata       00000005  0080811a  0000011a  000001ce  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+ 28 .text.main    00000048  000001ec  000001ec  000002a0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 29 .text.__dummy_fini 00000002  00000356  00000356  0000040a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 30 .text.__dummy_funcs_on_exit 00000002  00000358  00000358  0000040c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 31 .text.__dummy_simulator_exit 00000002  0000035a  0000035a  0000040e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 32 .text.exit    00000016  00000308  00000308  000003bc  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 33 .text._Exit   00000004  00000352  00000352  00000406  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 7a 00 	jmp	0xf4	; 0xf4 <__ctors_end>
+   4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+   8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+   c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  10:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  14:	0c 94 69 01 	jmp	0x2d2	; 0x2d2 <__vector_5>
+  18:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  1c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  20:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  24:	0c 94 90 00 	jmp	0x120	; 0x120 <__vector_9>
+  28:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  2c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  30:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  34:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  38:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  3c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  40:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  44:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  48:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  4c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  50:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  54:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  58:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  5c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  60:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  64:	0c 94 c4 00 	jmp	0x188	; 0x188 <__vector_25>
+  68:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  6c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  70:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  74:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  78:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  7c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  80:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  84:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  88:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  8c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  90:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  94:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  98:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  9c:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  a0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  a4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  a8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  ac:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  b0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  b4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  b8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  bc:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  c0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  c4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  c8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  cc:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  d0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  d4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  d8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  dc:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  e0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  e4:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  e8:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  ec:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+  f0:	0c 94 a7 01 	jmp	0x34e	; 0x34e <__bad_interrupt>
+
+000000f4 <__ctors_end>:
+  f4:	80 91 01 10 	lds	r24, 0x1001	; 0x801001 <__TEXT_REGION_LENGTH__+0x7e1001>
+  f8:	8f 7c       	andi	r24, 0xCF	; 207
+  fa:	80 60       	ori	r24, 0x00	; 0
+  fc:	80 68       	ori	r24, 0x80	; 128
+  fe:	80 93 01 10 	sts	0x1001, r24	; 0x801001 <__TEXT_REGION_LENGTH__+0x7e1001>
+ 102:	11 24       	eor	r1, r1
+ 104:	1f be       	out	0x3f, r1	; 63
+ 106:	cf ef       	ldi	r28, 0xFF	; 255
+ 108:	cd bf       	out	0x3d, r28	; 61
+ 10a:	df e7       	ldi	r29, 0x7F	; 127
+ 10c:	de bf       	out	0x3e, r29	; 62
+ 10e:	0e 94 f6 00 	call	0x1ec	; 0x1ec <main>
+ 112:	0c 94 84 01 	jmp	0x308	; 0x308 <exit>
+
+00000116 <_exit>:
+ 116:	f8 94       	cli
+
+00000118 <__stop_program>:
+ 118:	ff cf       	rjmp	.-2      	; 0x118 <__stop_program>
+
+Disassembly of section .text:
+
+0000034e <__bad_interrupt>:
+ 34e:	0c 94 00 00 	jmp	0	; 0x0 <__FLMAP_SECTION0__>
+
+Disassembly of section .text.ac_driver_init:
+
+00000294 <ac_driver_init>:
+
+
+
+void ac_driver_init(void) {
+	// Set pin PD2 (port D, pin 2) as an input
+	PORTD.DIRCLR = PIN2_bm;
+ 294:	e0 e6       	ldi	r30, 0x60	; 96
+ 296:	f4 e0       	ldi	r31, 0x04	; 4
+ 298:	84 e0       	ldi	r24, 0x04	; 4
+ 29a:	82 83       	std	Z+2, r24	; 0x02
+	
+	// Disable digital input buffer and pull-up resistor for pin PD2
+	PORTD.PIN2CTRL = PORT_ISC_INPUT_DISABLE_gc;
+ 29c:	82 8b       	std	Z+18, r24	; 0x12
+	
+	// Select the positive (AINP0 for pin PD2) and negative input (DACREF) source by writing to the MUXPOS and MUXNEG bit fields
+	// Hint: AC_MUXPOS_AINP0_gc | AC_MUXNEG_DACREF_gc;
+	AC0.MUXCTRL = AC_MUXPOS_AINP0_gc | AC_MUXNEG_DACREF_gc;
+ 29e:	e0 e8       	ldi	r30, 0x80	; 128
+ 2a0:	f6 e0       	ldi	r31, 0x06	; 6
+ 2a2:	83 e0       	ldi	r24, 0x03	; 3
+ 2a4:	82 83       	std	Z+2, r24	; 0x02
+	
+	// Enable the AC
+	uint8_t AC_CTRLA_ENABLE = 0x01; // Bit 0 - ENABLE?DAC Enable
+	AC0.CTRLA = AC_CTRLA_ENABLE;
+ 2a6:	81 e0       	ldi	r24, 0x01	; 1
+ 2a8:	80 83       	st	Z, r24
+	
+	// Set Voltage Reference
+	// V_REF = 1.024 V (MUST BE as it is stated in the task)
+	VREF.ACREF = VREF_REFSEL_1V024_gc;
+ 2aa:	10 92 b4 00 	sts	0x00B4, r1	; 0x8000b4 <__TEXT_REGION_LENGTH__+0x7e00b4>
+	
+	// Set DACREF
+	// V_DACREF = 0.1 V (MUST BE as it is stated in the task)
+	// V_REF = 1.024 V (MUST BE as it is stated in the task)
+	// Calculated DACREF value: DACREF = (V_DACREF*256)/V_REF = (0.1*256)/1.024 = 25
+	AC0.DACREF = 25; // Bits 7:0 – DACREF[7:0]?DACREF Data Value (0 - 255)
+ 2ae:	89 e1       	ldi	r24, 0x19	; 25
+ 2b0:	85 83       	std	Z+5, r24	; 0x05
+ 2b2:	08 95       	ret
+
+Disassembly of section .text.ac_driver_get_status:
+
+0000032c <ac_driver_get_status>:
+
+
+uint8_t ac_driver_get_status() {
+	// Bit shift output to only return: Bit 4 – CMPSTATE?AC State
+	// MAsk the output to ensure it outputs only the bit we want and ignores the rest
+	return ((AC0.STATUS >> AC_CMPSTATE_bp) & 0x01);
+ 32c:	80 91 87 06 	lds	r24, 0x0687	; 0x800687 <__TEXT_REGION_LENGTH__+0x7e0687>
+}
+ 330:	82 95       	swap	r24
+ 332:	81 70       	andi	r24, 0x01	; 1
+ 334:	08 95       	ret
+
+Disassembly of section .text.__vector_25:
+
+00000188 <__vector_25>:
+}
+
+
+
+// ISR for the Analog Comparator interrupt
+ISR(AC0_AC_vect) {
+ 188:	1f 92       	push	r1
+ 18a:	0f 92       	push	r0
+ 18c:	0f b6       	in	r0, 0x3f	; 63
+ 18e:	0f 92       	push	r0
+ 190:	11 24       	eor	r1, r1
+ 192:	0b b6       	in	r0, 0x3b	; 59
+ 194:	0f 92       	push	r0
+ 196:	2f 93       	push	r18
+ 198:	3f 93       	push	r19
+ 19a:	4f 93       	push	r20
+ 19c:	5f 93       	push	r21
+ 19e:	6f 93       	push	r22
+ 1a0:	7f 93       	push	r23
+ 1a2:	8f 93       	push	r24
+ 1a4:	9f 93       	push	r25
+ 1a6:	af 93       	push	r26
+ 1a8:	bf 93       	push	r27
+ 1aa:	ef 93       	push	r30
+ 1ac:	ff 93       	push	r31
+	// Get light level status
+	uint8_t light_status = ac_driver_get_status();
+ 1ae:	0e 94 96 01 	call	0x32c	; 0x32c <ac_driver_get_status>
+	
+	// Logic for LED
+	if (light_status == 0) {
+ 1b2:	81 11       	cpse	r24, r1
+ 1b4:	03 c0       	rjmp	.+6      	; 0x1bc <__vector_25+0x34>
+		led_driver_set_led_on();
+ 1b6:	0e 94 9f 01 	call	0x33e	; 0x33e <led_driver_set_led_on>
+ 1ba:	02 c0       	rjmp	.+4      	; 0x1c0 <__vector_25+0x38>
+	}
+	else {
+		led_driver_set_led_off();
+ 1bc:	0e 94 a3 01 	call	0x346	; 0x346 <led_driver_set_led_off>
+	}
+	
+	// Clear the interrupt flag by writing 1 to it
+	AC0.STATUS = AC_CMPIF_bm;
+ 1c0:	81 e0       	ldi	r24, 0x01	; 1
+ 1c2:	80 93 87 06 	sts	0x0687, r24	; 0x800687 <__TEXT_REGION_LENGTH__+0x7e0687>
+ 1c6:	ff 91       	pop	r31
+ 1c8:	ef 91       	pop	r30
+ 1ca:	bf 91       	pop	r27
+ 1cc:	af 91       	pop	r26
+ 1ce:	9f 91       	pop	r25
+ 1d0:	8f 91       	pop	r24
+ 1d2:	7f 91       	pop	r23
+ 1d4:	6f 91       	pop	r22
+ 1d6:	5f 91       	pop	r21
+ 1d8:	4f 91       	pop	r20
+ 1da:	3f 91       	pop	r19
+ 1dc:	2f 91       	pop	r18
+ 1de:	0f 90       	pop	r0
+ 1e0:	0b be       	out	0x3b, r0	; 59
+ 1e2:	0f 90       	pop	r0
+ 1e4:	0f be       	out	0x3f, r0	; 63
+ 1e6:	0f 90       	pop	r0
+ 1e8:	1f 90       	pop	r1
+ 1ea:	18 95       	reti
+
+Disassembly of section .text.io_driver_disable:
+
+000002b4 <io_driver_disable>:
+
+
+
+void io_driver_disable() {
+	// Set up the PINCONFIG register to enable pull-ups and disable digital input
+	PORTA.PINCONFIG = PORT_PULLUPEN_bm | PORT_ISC_INPUT_DISABLE_gc;
+ 2b4:	e0 e0       	ldi	r30, 0x00	; 0
+ 2b6:	f4 e0       	ldi	r31, 0x04	; 4
+ 2b8:	8c e0       	ldi	r24, 0x0C	; 12
+ 2ba:	83 87       	std	Z+11, r24	; 0x0b
+
+	// Apply the configuration across all ports using the multi-pin configuration
+	PORTA.PINCTRLUPD = 0xFF; // Apply configuration to all pins in PORTA
+ 2bc:	8f ef       	ldi	r24, 0xFF	; 255
+ 2be:	84 87       	std	Z+12, r24	; 0x0c
+	PORTB.PINCTRLUPD = 0xFF; // Apply configuration to all pins in PORTB
+ 2c0:	80 93 2c 04 	sts	0x042C, r24	; 0x80042c <__TEXT_REGION_LENGTH__+0x7e042c>
+	PORTC.PINCTRLUPD = 0xFF; // Apply configuration to all pins in PORTC
+ 2c4:	80 93 4c 04 	sts	0x044C, r24	; 0x80044c <__TEXT_REGION_LENGTH__+0x7e044c>
+	PORTD.PINCTRLUPD = 0xFF; // Apply configuration to all pins in PORTD
+ 2c8:	80 93 6c 04 	sts	0x046C, r24	; 0x80046c <__TEXT_REGION_LENGTH__+0x7e046c>
+	PORTE.PINCTRLUPD = 0xFF; // Apply configuration to all pins in PORTE
+ 2cc:	80 93 8c 04 	sts	0x048C, r24	; 0x80048c <__TEXT_REGION_LENGTH__+0x7e048c>
+ 2d0:	08 95       	ret
+
+Disassembly of section .text.led_driver_init:
+
+00000336 <led_driver_init>:
+#include "led_driver.h"
+
+
+
+void led_driver_init(void) {
+	PORTA.DIRSET = PIN2_bm;
+ 336:	84 e0       	ldi	r24, 0x04	; 4
+ 338:	80 93 01 04 	sts	0x0401, r24	; 0x800401 <__TEXT_REGION_LENGTH__+0x7e0401>
+ 33c:	08 95       	ret
+
+Disassembly of section .text.led_driver_set_led_on:
+
+0000033e <led_driver_set_led_on>:
+
+
+
+void led_driver_set_led_on(void) {
+	// LED is active low. Set pin LOW to turn LED on
+	PORTA.OUTCLR = PIN2_bm;
+ 33e:	84 e0       	ldi	r24, 0x04	; 4
+ 340:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__TEXT_REGION_LENGTH__+0x7e0406>
+ 344:	08 95       	ret
+
+Disassembly of section .text.led_driver_set_led_off:
+
+00000346 <led_driver_set_led_off>:
+}
+
+void led_driver_set_led_off(void) {
+	// LED is active low. Set pin HIGH to turn LED off
+	PORTA.OUTSET = PIN2_bm;
+ 346:	84 e0       	ldi	r24, 0x04	; 4
+ 348:	80 93 05 04 	sts	0x0405, r24	; 0x800405 <__TEXT_REGION_LENGTH__+0x7e0405>
+ 34c:	08 95       	ret
+
+Disassembly of section .text.__vector_9:
+
+00000120 <__vector_9>:
+	sei();
+}
+
+
+
+ISR(TCA0_OVF_vect) {
+ 120:	1f 92       	push	r1
+ 122:	0f 92       	push	r0
+ 124:	0f b6       	in	r0, 0x3f	; 63
+ 126:	0f 92       	push	r0
+ 128:	11 24       	eor	r1, r1
+ 12a:	0b b6       	in	r0, 0x3b	; 59
+ 12c:	0f 92       	push	r0
+ 12e:	2f 93       	push	r18
+ 130:	3f 93       	push	r19
+ 132:	4f 93       	push	r20
+ 134:	5f 93       	push	r21
+ 136:	6f 93       	push	r22
+ 138:	7f 93       	push	r23
+ 13a:	8f 93       	push	r24
+ 13c:	9f 93       	push	r25
+ 13e:	af 93       	push	r26
+ 140:	bf 93       	push	r27
+ 142:	ef 93       	push	r30
+ 144:	ff 93       	push	r31
+	// Every time microcontroller goes into sleep mode, it disabled AC
+	// Thats why every time we get interrupt we reinitialize our AC to enable it again
+	ac_driver_init();
+ 146:	0e 94 4a 01 	call	0x294	; 0x294 <ac_driver_init>
+	
+	// Get light level status
+	uint8_t light_status = ac_driver_get_status();
+ 14a:	0e 94 96 01 	call	0x32c	; 0x32c <ac_driver_get_status>
+	
+	// Logic for LED
+	if (light_status == 0) {
+ 14e:	81 11       	cpse	r24, r1
+ 150:	03 c0       	rjmp	.+6      	; 0x158 <__vector_9+0x38>
+		led_driver_set_led_on();
+ 152:	0e 94 9f 01 	call	0x33e	; 0x33e <led_driver_set_led_on>
+ 156:	02 c0       	rjmp	.+4      	; 0x15c <__vector_9+0x3c>
+	}
+	else {
+		led_driver_set_led_off();
+ 158:	0e 94 a3 01 	call	0x346	; 0x346 <led_driver_set_led_off>
+	}
+	
+	// Clear interrupt flag
+	TCA0.SINGLE.INTFLAGS = TCA_SINGLE_OVF_bm;
+ 15c:	81 e0       	ldi	r24, 0x01	; 1
+ 15e:	80 93 0b 0a 	sts	0x0A0B, r24	; 0x800a0b <__TEXT_REGION_LENGTH__+0x7e0a0b>
+ 162:	ff 91       	pop	r31
+ 164:	ef 91       	pop	r30
+ 166:	bf 91       	pop	r27
+ 168:	af 91       	pop	r26
+ 16a:	9f 91       	pop	r25
+ 16c:	8f 91       	pop	r24
+ 16e:	7f 91       	pop	r23
+ 170:	6f 91       	pop	r22
+ 172:	5f 91       	pop	r21
+ 174:	4f 91       	pop	r20
+ 176:	3f 91       	pop	r19
+ 178:	2f 91       	pop	r18
+ 17a:	0f 90       	pop	r0
+ 17c:	0b be       	out	0x3b, r0	; 59
+ 17e:	0f 90       	pop	r0
+ 180:	0f be       	out	0x3f, r0	; 63
+ 182:	0f 90       	pop	r0
+ 184:	1f 90       	pop	r1
+ 186:	18 95       	reti
+
+Disassembly of section .text.USART3_Init:
+
+00000270 <USART3_Init>:
+
+#include "usart.h"
+
+void USART3_Init(void)
+{
+	PORTB.DIR &= ~PIN1_bm;
+ 270:	e0 e2       	ldi	r30, 0x20	; 32
+ 272:	f4 e0       	ldi	r31, 0x04	; 4
+ 274:	80 81       	ld	r24, Z
+ 276:	8d 7f       	andi	r24, 0xFD	; 253
+ 278:	80 83       	st	Z, r24
+	PORTB.DIR |= PIN0_bm;
+ 27a:	80 81       	ld	r24, Z
+ 27c:	81 60       	ori	r24, 0x01	; 1
+ 27e:	80 83       	st	Z, r24
+
+	USART3.BAUD = (uint16_t)USART3_BAUD_RATE(9600);
+ 280:	e0 e6       	ldi	r30, 0x60	; 96
+ 282:	f8 e0       	ldi	r31, 0x08	; 8
+ 284:	83 e8       	ldi	r24, 0x83	; 131
+ 286:	96 e0       	ldi	r25, 0x06	; 6
+ 288:	80 87       	std	Z+8, r24	; 0x08
+ 28a:	91 87       	std	Z+9, r25	; 0x09
+	USART3.CTRLB |= USART_TXEN_bm | USART_RXEN_bm;
+ 28c:	86 81       	ldd	r24, Z+6	; 0x06
+ 28e:	80 6c       	ori	r24, 0xC0	; 192
+ 290:	86 83       	std	Z+6, r24	; 0x06
+ 292:	08 95       	ret
+
+Disassembly of section .text.USART3_SendChar:
+
+0000031e <USART3_SendChar>:
+}
+void USART3_SendChar(char c)
+{
+	while (!(USART3.STATUS & USART_DREIF_bm))
+ 31e:	90 91 64 08 	lds	r25, 0x0864	; 0x800864 <__TEXT_REGION_LENGTH__+0x7e0864>
+ 322:	95 ff       	sbrs	r25, 5
+ 324:	fc cf       	rjmp	.-8      	; 0x31e <USART3_SendChar>
+	{
+		;
+	}
+	USART3.TXDATAL = c;
+ 326:	80 93 62 08 	sts	0x0862, r24	; 0x800862 <__TEXT_REGION_LENGTH__+0x7e0862>
+ 32a:	08 95       	ret
+
+Disassembly of section .text.USART3_SendString:
+
+00000234 <USART3_SendString>:
+}
+void USART3_SendString(char *str)
+{
+ 234:	0f 93       	push	r16
+ 236:	1f 93       	push	r17
+ 238:	cf 93       	push	r28
+ 23a:	df 93       	push	r29
+ 23c:	8c 01       	movw	r16, r24
+	for(size_t i = 0; i < strlen(str); i++)
+ 23e:	c0 e0       	ldi	r28, 0x00	; 0
+ 240:	d0 e0       	ldi	r29, 0x00	; 0
+ 242:	07 c0       	rjmp	.+14     	; 0x252 <USART3_SendString+0x1e>
+	{
+		USART3_SendChar(str[i]);
+ 244:	f8 01       	movw	r30, r16
+ 246:	ec 0f       	add	r30, r28
+ 248:	fd 1f       	adc	r31, r29
+ 24a:	80 81       	ld	r24, Z
+ 24c:	0e 94 8f 01 	call	0x31e	; 0x31e <USART3_SendChar>
+	}
+	USART3.TXDATAL = c;
+}
+void USART3_SendString(char *str)
+{
+	for(size_t i = 0; i < strlen(str); i++)
+ 250:	21 96       	adiw	r28, 0x01	; 1
+ 252:	f8 01       	movw	r30, r16
+ 254:	01 90       	ld	r0, Z+
+ 256:	00 20       	and	r0, r0
+ 258:	e9 f7       	brne	.-6      	; 0x254 <USART3_SendString+0x20>
+ 25a:	31 97       	sbiw	r30, 0x01	; 1
+ 25c:	e0 1b       	sub	r30, r16
+ 25e:	f1 0b       	sbc	r31, r17
+ 260:	ce 17       	cp	r28, r30
+ 262:	df 07       	cpc	r29, r31
+ 264:	78 f3       	brcs	.-34     	; 0x244 <USART3_SendString+0x10>
+	{
+		USART3_SendChar(str[i]);
+	}
+}
+ 266:	df 91       	pop	r29
+ 268:	cf 91       	pop	r28
+ 26a:	1f 91       	pop	r17
+ 26c:	0f 91       	pop	r16
+ 26e:	08 95       	ret
+
+Disassembly of section .text.setup_rtc_wakeup:
+
+000002f0 <setup_rtc_wakeup>:
+#include <avr/sleep.h>
+
+// Configure RTC for periodic wake-up
+void setup_rtc_wakeup() {
+	// Set up RTC to use an external 32.768 kHz crystal oscillator
+	RTC.CLKSEL = RTC_CLKSEL_XOSC32K_gc;  // External crystal as RTC clock
+ 2f0:	e0 e4       	ldi	r30, 0x40	; 64
+ 2f2:	f1 e0       	ldi	r31, 0x01	; 1
+ 2f4:	82 e0       	ldi	r24, 0x02	; 2
+ 2f6:	87 83       	std	Z+7, r24	; 0x07
+	RTC.PER = 0x01;  // Set the period for the overflow (adjust for desired interval)
+ 2f8:	81 e0       	ldi	r24, 0x01	; 1
+ 2fa:	90 e0       	ldi	r25, 0x00	; 0
+ 2fc:	82 87       	std	Z+10, r24	; 0x0a
+ 2fe:	93 87       	std	Z+11, r25	; 0x0b
+	RTC.INTCTRL = RTC_OVF_bm;  // Enable overflow interrupt
+ 300:	82 83       	std	Z+2, r24	; 0x02
+
+	RTC.CTRLA = RTC_RUNSTDBY_bm | RTC_PRESCALER_DIV32768_gc | RTC_RTCEN_bm;  // Enable RTC with maximum prescaler for lowest frequency
+ 302:	89 ef       	ldi	r24, 0xF9	; 249
+ 304:	80 83       	st	Z, r24
+ 306:	08 95       	ret
+
+Disassembly of section .text.__vector_5:
+
+000002d2 <__vector_5>:
+}
+
+// RTC interrupt to wake up from sleep
+ISR(RTC_CNT_vect) {
+ 2d2:	1f 92       	push	r1
+ 2d4:	0f 92       	push	r0
+ 2d6:	0f b6       	in	r0, 0x3f	; 63
+ 2d8:	0f 92       	push	r0
+ 2da:	11 24       	eor	r1, r1
+ 2dc:	8f 93       	push	r24
+	RTC.INTFLAGS = RTC_OVF_bm;  // Clear the overflow interrupt flag
+ 2de:	81 e0       	ldi	r24, 0x01	; 1
+ 2e0:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <__TEXT_REGION_LENGTH__+0x7e0143>
+}
+ 2e4:	8f 91       	pop	r24
+ 2e6:	0f 90       	pop	r0
+ 2e8:	0f be       	out	0x3f, r0	; 63
+ 2ea:	0f 90       	pop	r0
+ 2ec:	1f 90       	pop	r1
+ 2ee:	18 95       	reti
+
+Disassembly of section .text.main:
+
+000001ec <main>:
+
+int main(void)
+{
+	// Initialization ----------
+	//io_driver_disable(); // Makes sure to disable all pins at startup so we don't draw to much power
+	USART3_Init(); // Debugging
+ 1ec:	0e 94 38 01 	call	0x270	; 0x270 <USART3_Init>
+	// Task 5: Core Independent Operations Initialization
+	//core_init();
+	
+	// Task 6: Low Power
+	// Set up peripherals
+	io_driver_disable();        // Disable unnecessary I/O for low power
+ 1f0:	0e 94 5a 01 	call	0x2b4	; 0x2b4 <io_driver_disable>
+	ac_driver_init();           // Initialize the Analog Comparator (AC)
+ 1f4:	0e 94 4a 01 	call	0x294	; 0x294 <ac_driver_init>
+	led_driver_init();          // Initialize LED 
+ 1f8:	0e 94 9b 01 	call	0x336	; 0x336 <led_driver_init>
+	// Set up RTC wake-up timer
+	setup_rtc_wakeup();
+ 1fc:	0e 94 78 01 	call	0x2f0	; 0x2f0 <setup_rtc_wakeup>
+	// Enable global interrupts
+	sei();
+ 200:	78 94       	sei
+	// Set sleep mode to Power-Down for minimal power usage
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+ 202:	e0 e5       	ldi	r30, 0x50	; 80
+ 204:	f0 e0       	ldi	r31, 0x00	; 0
+ 206:	80 81       	ld	r24, Z
+ 208:	89 7f       	andi	r24, 0xF9	; 249
+ 20a:	84 60       	ori	r24, 0x04	; 4
+ 20c:	80 83       	st	Z, r24
+		// Everything is ran in Core Code
+		// CPU is off
+		// The Events are happening outside CPU
+		
+		// Enter sleep mode
+		sleep_enable();
+ 20e:	e0 e5       	ldi	r30, 0x50	; 80
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	80 81       	ld	r24, Z
+ 214:	81 60       	ori	r24, 0x01	; 1
+ 216:	80 83       	st	Z, r24
+		sleep_cpu();  // CPU will sleep until woken by the RTC interrupt
+ 218:	88 95       	sleep
+
+		// Code resumes here after waking up
+		sleep_disable();  // Disable sleep to continue main loop processing
+ 21a:	80 81       	ld	r24, Z
+ 21c:	8e 7f       	andi	r24, 0xFE	; 254
+ 21e:	80 83       	st	Z, r24
+		
+		// Debug: Toggle LED directly after waking up to verify wake-up cycle
+		PORTA.OUTTGL = PIN2_bm;  // Toggle LED
+ 220:	84 e0       	ldi	r24, 0x04	; 4
+ 222:	80 93 07 04 	sts	0x0407, r24	; 0x800407 <__TEXT_REGION_LENGTH__+0x7e0407>
+		USART3_Init(); // Debugging
+ 226:	0e 94 38 01 	call	0x270	; 0x270 <USART3_Init>
+		USART3_SendString("HELP");
+ 22a:	8a e1       	ldi	r24, 0x1A	; 26
+ 22c:	91 e8       	ldi	r25, 0x81	; 129
+ 22e:	0e 94 1a 01 	call	0x234	; 0x234 <USART3_SendString>
+ 232:	ed cf       	rjmp	.-38     	; 0x20e <__EEPROM_REGION_LENGTH__+0xe>
+
+Disassembly of section .text.__dummy_fini:
+
+00000356 <_fini>:
+ 356:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+00000358 <__funcs_on_exit>:
+ 358:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+0000035a <__simulator_exit>:
+ 35a:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+00000308 <exit>:
+ 308:	ec 01       	movw	r28, r24
+ 30a:	0e 94 ac 01 	call	0x358	; 0x358 <__funcs_on_exit>
+ 30e:	0e 94 ab 01 	call	0x356	; 0x356 <_fini>
+ 312:	ce 01       	movw	r24, r28
+ 314:	0e 94 ad 01 	call	0x35a	; 0x35a <__simulator_exit>
+ 318:	ce 01       	movw	r24, r28
+ 31a:	0e 94 a9 01 	call	0x352	; 0x352 <_Exit>
+
+Disassembly of section .text._Exit:
+
+00000352 <_Exit>:
+ 352:	0e 94 8b 00 	call	0x116	; 0x116 <_exit>
